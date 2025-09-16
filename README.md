@@ -13,7 +13,7 @@ Description: HTML + CSS + JavaScript 实现动态页面
 
 <img src="./image/01.png" alt="01" style="zoom: 50%;" />
 
-<img src="/Users/pudongbin/Desktop/FullStack/task3/image/02.png" alt="02" style="zoom:50%;" />
+<img src="./image/02.png" alt="02" style="zoom:50%;" />
 
 
 
@@ -83,7 +83,7 @@ Description: HTML + CSS + JavaScript 实现动态页面
 
   - 存储格式
 
-    ![user-info ](/Users/pudongbin/Desktop/FullStack/task3/image/user-info .png)
+    ![user-info ](./image/user-info .png)
 
 - chat-history 
 
@@ -93,7 +93,7 @@ Description: HTML + CSS + JavaScript 实现动态页面
 
   - 存储格式 { from: 'me' | 'them', text, ts }
 
-    ![chat-history ](/Users/pudongbin/Desktop/FullStack/task3/image/chat-history .png)
+    ![chat-history ](./image/chat-history .png)
 
 - user-colors
 
@@ -101,7 +101,7 @@ Description: HTML + CSS + JavaScript 实现动态页面
 
   - 存储格式
 
-    ![user-colors](/Users/pudongbin/Desktop/FullStack/task3/image/user-colors.png)
+    ![user-colors](./image/user-colors.png)
 
 #### **功能与交互逻辑**
 
