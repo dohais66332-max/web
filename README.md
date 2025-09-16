@@ -83,7 +83,7 @@ Description: HTML + CSS + JavaScript 实现动态页面
 
   - 存储格式
 
-    ![user-info ](./image/user-info .png)
+    ![user-info ](./image/user-info.png)
 
 - chat-history 
 
@@ -93,7 +93,7 @@ Description: HTML + CSS + JavaScript 实现动态页面
 
   - 存储格式 { from: 'me' | 'them', text, ts }
 
-    ![chat-history ](./image/chat-history .png)
+    ![chat-history ](./image/chat-history.png)
 
 - user-colors
 
