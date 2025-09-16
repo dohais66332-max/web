@@ -246,7 +246,7 @@
 
   window.addEventListener('hashchange', router); 
 
-  // 固定颜色，存 local storage
+  // 固定颜色，存 localstorage
   function getColorForUser(name) {
     // 读取color对象
     let colors = JSON.parse(localStorage.getItem('user_colors') || '{}');
@@ -259,7 +259,7 @@
     const b = Math.floor(180 + Math.random() * 75);
     const color = `rgba(${r},${g},${b},0.8)`;
 
-    // 存入 localStorage，保证下次一致
+    // 存入 localStorage
     colors[name] = color;
     localStorage.setItem('user_colors', JSON.stringify(colors));
     return color;
@@ -270,7 +270,7 @@
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => response.json())
       .then(data => {
-        //存user info
+        // 存user info
         localStorage.setItem('user_info', JSON.stringify(data));
 
         const box = document.querySelector('#users-list')
@@ -359,7 +359,7 @@
         </div>
       </div>
     `;
-    // 绑定“发消息”按钮
+    // 绑定 发消息 按钮
     document.getElementById('btn-msg').onclick = () => {
       location.hash = `#chat?id=${user.id}`;
     };
@@ -400,7 +400,7 @@
           </div>
         </div>
     `;
-    // 绑定“发消息”按钮
+    // 绑定 发消息 按钮
     document.getElementById('btn-msg').onclick = () => {
       location.hash = `#chat?id=0`;
     };
@@ -576,7 +576,7 @@
     const firstTime = list.length ? list[0].ts : Date.now();
     const timeStr = new Date(firstTime).toLocaleTimeString();
 
-    // 渲染消息：对方在左（白色），我方在右（绿色）
+    // 渲染消息：左白右绿
     box.innerHTML = `
       <div class="chat-time"><time>${timeStr}</time></div>
       ${list.map(m => m.from === 'me'
@@ -629,7 +629,7 @@
   function formatTime(ts) {
     if (!ts) return '';
     const d = new Date(ts);
-    // 只显示 HH:MM
+    // HH:MM 时间格式
     return d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   }
 
