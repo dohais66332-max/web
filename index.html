@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WeChat Dynamic Page</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<style>
+  #user, #chat {
+    display: none;
+  }
+</style>
+<body>
+  <!-- chat界面 -->
+  <section class="page" id="chat">
+    <!-- 页面容器 -->
+    <div class="container">
+      <!-- 左侧区域 -->
+      <div class="sidebar">
+        <!-- 顶部三个圆点 -->
+        <div class="mac-icon">
+          <div class="circle red"></div>
+          <div class="circle yellow"></div>
+          <div class="circle green"></div>
+        </div>
+
+        <div class="nav-section">
+          <!-- 头像 -->
+          <div class="nav-item" id="avatar"><img src="./image/avatar.jpg" alt="avatar"/></div>
+          <!-- 其他图标 -->
+          <div class="nav-item"><img src="./image/xiaoxi.png" alt="xiaoxi" /></div>
+          <a href="#user">
+            <button class="nav-item" id="lianxiren-button">
+              <img src="./image/lianxiren.png" alt="lianxiren" />
+            </button>
+          </a>
+          <div class="nav-item"><img src="./image/shoucang.png" alt="shoucang" /></div>
+          <div class="nav-item"><img src="./image/wenjian.png" alt="wenjian" /></div>
+          <div class="nav-item pengyouquan">
+              <div class="notice">1</div>
+              <img src="./image/pengyouquan.png" alt="pengyouquan" />
+          </div>
+          <div class="nav-item"><img src="./image/shipin.png" alt="shipin" /></div>
+          <div class="nav-item"><img src="./image/kanyikan.png" alt="kanyikan" /></div>
+          <div class="nav-item"><img src="./image/sousuo.png" alt="sousuo" /></div>
+        </div>
+
+        <!-- 底部3个图标 -->
+        <div class="foot-section">
+          <div class="nav-item"><img src="./image/xiaochengxu.png" alt="xiaochengxu" /></div>
+          <div class="nav-item"><img src="./image/shouji.png" alt="shouji" /></div>
+          <div class="nav-item"><img src="./image/caidan.png" alt="caidan" /></div>
+        </div>
+      </div>
+
+      <!-- 中间联系人区域 -->
+      <div class="chat-list">
+        <!-- 搜索框 -->
+        <div class="search">
+          <img class="search-icon" src="./image/search.png" alt="search" />
+          <input class="search-box" type="search" placeholder="搜索" />
+          <button class="create-group-chat">+</button>
+        </div>
+        <!-- 聊天列表 -->
+        <div class="chat-list-body">
+          <!-- 聊天对象 -->
+          <div class="chat-part">
+            <div class="chat-part-avatar">
+              <img src="./image/file-transfer.png" alt="chat-part-avatar">
+            </div>
+            <!-- 显示信息 -->
+            <div class="chat-part-info">
+              <p class="chat-part-name"></p>
+              <time class="chat-access-time"></time>
+              <p class="last-message"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右侧聊天窗口区域 -->
+      <div class="chat-window">
+        <!-- 顶部聊天名称 -->
+        <div class="chat-name">
+          <p></p>
+        </div>
+        <div class="chat-box">
+          <!-- 聊天时间 -->
+          <div class="chat-time">
+            <time></time>
+          </div>
+          <!-- 聊天内容 -->
+          <div class="chat-message">
+            <div class="chat-bubble">
+              <p></p>
+              <div class="triangle-right"></div>
+            </div>
+            <img class="chat-avatar" src="./image/avatar.jpg" alt="chat-avatar">
+          </div>
+        </div>
+        <div class="send-message">
+        <!-- 聊天工具栏 -->
+          <div class="tool">
+            <div class="tool-item"><img src="./image/emoji.png" alt="emoji" /></div>
+            <div class="tool-item"><img src="./image/file.png" alt="file" /></div>
+            <div class="tool-item"><img src="./image/cut.png" alt="cut" /></div>
+            <div class="tool-item"><img src="./image/message.png" alt="message" /></div>
+          </div>
+          <!-- 对话输入框 -->
+          <textarea class="send-message"></textarea>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系人页面 -->
+  <section class="page" id="user">
+    <!-- 页面容器 -->
+    <div class="container">
+      <!-- 左侧区域 -->
+      <div class="sidebar">
+        <!-- 顶部三个圆点 -->
+        <div class="mac-icon">
+          <div class="circle red"></div>
+          <div class="circle yellow"></div>
+          <div class="circle green"></div>
+        </div>
+
+        <div class="nav-section">
+          <!-- 头像 -->
+          <div class="nav-item" id="avatar"><img src="./image/avatar.jpg" alt="avatar"/></div>
+          <!-- 其他图标 -->
+           <a href="#chat">
+            <button class="nav-item" id="chat-button">
+              <img src="./image/xiaoxi02.png" alt="xiaoxi" />
+            </button>
+          </a>
+          <div class="nav-item"><img src="./image/lianxiren02.png" alt="lianxiren" /></div>
+          <div class="nav-item"><img src="./image/shoucang.png" alt="shoucang" /></div>
+          <div class="nav-item"><img src="./image/wenjian.png" alt="wenjian" /></div>
+          <div class="nav-item pengyouquan">
+              <div class="notice">1</div>
+              <img src="./image/pengyouquan.png" alt="pengyouquan" />
+          </div>
+          <div class="nav-item"><img src="./image/shipin.png" alt="shipin" /></div>
+          <div class="nav-item"><img src="./image/kanyikan.png" alt="kanyikan" /></div>
+          <div class="nav-item"><img src="./image/sousuo.png" alt="sousuo" /></div>
+        </div>
+
+        <!-- 底部3个图标 -->
+        <div class="foot-section">
+          <div class="nav-item"><img src="./image/xiaochengxu.png" alt="xiaochengxu" /></div>
+          <div class="nav-item"><img src="./image/shouji.png" alt="shouji" /></div>
+          <div class="nav-item"><img src="./image/caidan.png" alt="caidan" /></div>
+        </div>
+      </div>
+
+      <!-- 中间联系人区域 -->
+      <div class="chat-list">
+        <!-- 搜索框 -->
+        <div class="search"></div>
+        <!-- 滚动 -->
+        <div class="users-scroll">
+          <!-- 聊天对象 -->
+          <div class="users-part" id="file">
+            <div class="users-avatar">
+              <img src="./image/file-transfer.png" alt="chat-part-avatar">
+            </div>
+            <!-- 显示信息 -->
+            <div class="user-info">
+              <p class="user-name">文件传输助手</p>
+            </div>
+          </div>
+          <!-- 动态user列表 -->
+          <div class="users-list" id="users-list"></div>
+        </div>
+      </div>
+
+      <!-- 右侧聊天窗口区域 -->
+      <div class="chat-window">
+        <img id="chat-icon" src="./image/liaotian.png" alt="liaotian">
+      </div>
+    </div>
+  </section>
+</body>
+<script>
+  // 页面显示
+  function showPage(p) {
+    document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+    const show = document.querySelector(p);
+    show.style.display = 'block';
+  }
+  // 路由
+  const DEFAULT_PAGE = '#chat';
+
+  function router() {
+    const h = window.location.hash;
+    // 解析 id
+    const sp = h.split('?')[1] || '';
+    const id = new URLSearchParams(sp).get('id');
+
+    if (h.startsWith('#user')) {
+      showPage('#user');
+      if (id == '0') {
+        renderFileTransfer();
+      } else if (id) {
+        renderUserInfo(id);
+      } else {
+        loadUsers();
+        renderUserLanding();
+      }
+      return;
+    }
+    if (h.startsWith('#chat')) {
+      showPage('#chat');
+      if (id) {
+        enterChatPage('chat');
+      } else {
+        enterChatPage('chat-home');
+        renderChatLanding();
+      }      
+      return;
+    }
+  }
+
+  function renderUserLanding() {
+    const box = document.querySelector('#user .chat-window');
+    box.innerHTML = `<img id="chat-icon" src="./image/liaotian.png" alt="liaotian">`;
+  }
+
+  function renderChatLanding() {
+    const chatName = document.querySelector('#chat .chat-name p');
+    chatName.textContent = '';
+    console.log(chatName);
+    
+    const box = document.querySelector('#chat .chat-box');
+    box.innerHTML = `<img id="chat-icon" src="./image/liaotian.png" alt="liaotian">`;
+  }
+  
+  // 每次刷新页面返回chat
+  window.addEventListener('DOMContentLoaded', () => {
+    if (!location.hash) location.replace(DEFAULT_PAGE);
+    router();
+  });
+
+  window.addEventListener('hashchange', router); 
+
+  // 固定颜色，存 local storage
+  function getColorForUser(name) {
+    // 读取color对象
+    let colors = JSON.parse(localStorage.getItem('user_colors') || '{}');
+    // 有值就直接返回
+    if (colors[name]) return colors[name];
+
+    // 首次生成新颜色
+    const r = Math.floor(180 + Math.random() * 75);
+    const g = Math.floor(180 + Math.random() * 75);
+    const b = Math.floor(180 + Math.random() * 75);
+    const color = `rgba(${r},${g},${b},0.8)`;
+
+    // 存入 localStorage，保证下次一致
+    colors[name] = color;
+    localStorage.setItem('user_colors', JSON.stringify(colors));
+    return color;
+  }
+
+  // fetch user info
+  function loadUsers() {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+      .then(data => {
+        //存user info
+        localStorage.setItem('user_info', JSON.stringify(data));
+
+        const box = document.querySelector('#users-list')
+        // 清空旧节点
+        while (box.firstChild) {
+          box.removeChild(box.firstChild);
+        }
+
+        data.forEach(item => {
+          const color = getColorForUser(item.username);
+          const initial = item.username[0].toUpperCase();
+
+          const div = document.createElement('div');
+          div.className = 'users-part';
+          div.innerHTML = `
+            <div class="users-avatar">
+              <div class="user-badge" style="background:${color}">${initial}</div>
+            </div>
+            <div class="user-info">
+              <p class="user-name">${item.username}</p>
+            </div>
+          `;
+
+          div.onclick = () => {
+            document.querySelectorAll('.users-part').forEach(el => el.classList.remove('active'));
+            div.classList.add('active');
+            location.hash = `#user?id=${item.id}`;
+          };
+
+          box.appendChild(div);
+        });
+      });
+  }
+  // 文件传输助手点击高亮
+  document.querySelector('#file').onclick = () => {
+    // clear old highlight
+    document.querySelectorAll('.users-part').forEach(el => el.classList.remove('active'));
+    // highlight
+    document.querySelector('#file').classList.add('active');
+    // hash router
+    location.hash = '#user?id=0';
+
+  };
+
+  // user info page
+  function renderUserInfo(id) {
+
+    const data = JSON.parse(localStorage.getItem('user_info') || '[]');
+    const user = data.find(u => u.id == id);
+    const initial = user.username[0].toUpperCase();
+    const color = getColorForUser(user.username);
+
+    if (!user) return;
+
+    const infoBox = document.querySelector('#user .chat-window');
+    infoBox.innerHTML = `
+      <div class="user-detail">
+        <div class="user-card">
+          <div class="user-badge" style="background:${color}">${initial}</div>
+          <div class="user-all">
+            <div class="uname">${user.username}</div>
+            <div class="secondary">${user.name}</div>
+            <div class="secondary">${user.phone}</div>
+          </div>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="user-actions">
+          <button class="user-action" id="btn-msg">
+            <div class="icon">
+              <img src="./image/faxiaoxi.png" alt="message">
+            </div>
+            <div class="label">发消息</div>
+          </button>
+
+          <div class="user-action">
+            <a id="btn-web" href="http://${user.website}" target="_blank" rel="user_web">
+              <div class="icon">
+                <img src="./image/web.png" alt="web">
+              </div>
+            </a>
+            <div class="label">访问网站</div>
+          </div>
+          
+        </div>
+      </div>
+    `;
+    // 绑定“发消息”按钮
+    document.getElementById('btn-msg').onclick = () => {
+      location.hash = `#chat?id=${user.id}`;
+    };
+  }
+
+  // 文件传输 info page
+  function renderFileTransfer() {
+    const infoBox = document.querySelector('#user .chat-window');
+    infoBox.innerHTML = `
+      <div class="user-detail">
+          <div class="user-card">
+            <img src="./image/file-transfer.svg" alt="file-helper" style="width:60px; height:60px; border-radius: 8px;">
+            <div class="user-all">
+              <div class="uname">文件传输助手</div>
+              <div class="secondary">微信官方助手</div>
+              <div class="secondary">点击发送文件到手机</div>
+            </div>
+          </div>
+
+          <div class="line"></div>
+
+          <div class="user-actions">
+            <button class="user-action" id="btn-msg">
+              <div class="icon">
+                <img src="./image/faxiaoxi.png" alt="message">
+              </div>
+              <div class="label">发消息</div>
+            </button>
+
+            <div class="user-action">
+            <a id="btn-web" href="http://jingyan.baidu.com/article/5553fa82e138db24a339341f.html" target="_blank" rel="user_web">
+              <div class="icon">
+                <img src="./image/web.png" alt="web">
+              </div>
+            </a>
+            <div class="label">使用教程</div>
+          </div>
+          </div>
+        </div>
+    `;
+    // 绑定“发消息”按钮
+    document.getElementById('btn-msg').onclick = () => {
+      location.hash = `#chat?id=0`;
+    };
+  }
+  
+  // Chat
+  const CHAT_STORE_KEY = 'chat-history';
+
+  function getHistory() {
+    return JSON.parse(localStorage.getItem(CHAT_STORE_KEY) || '{}');
+  }
+
+  function setHistory(h) {
+    localStorage.setItem(CHAT_STORE_KEY, JSON.stringify(h))
+  }
+
+  function appendMsg(chatId, msg) {
+    const h = getHistory();
+    h[chatId] ||= [];
+    h[chatId].push(msg); // { from: 'me' | 'them', text, ts }
+    setHistory(h);
+  }
+
+  function getCurrentChatId() {
+    const h = window.location.hash;
+    if (!h.startsWith('#chat')) return null;
+    const sp = h.split('?')[1] || '';
+    return new URLSearchParams(sp).get('id');
+  }
+
+  // 首次进入会话自动回复
+  function makeGreeting(chatId) {
+    const h = getHistory();
+    if (h[chatId] && h[chatId].length) return; // 已有记录就不提示
+    if (chatId == '0') {
+      appendMsg('0', {
+        from: 'them',
+        text: '欢迎使用文件传输助手',
+        ts: Date.now()
+      });
+      return
+    }
+    const users = JSON.parse(localStorage.getItem('user_info') || '[]');
+    const u = users.find(x => x.id == chatId);
+    if (!u) return;
+
+    const cityStreet = `${u.address?.city || ''}_${u.address?.street || ''}`;
+    const greet = `你好，我的名字是${u.name}，你可以叫我${u.username}，我的邮箱是${u.email}，我的地址是${cityStreet}，电话是${u.phone}，你可以访问我的个人网站${u.website}～。`;
+    appendMsg(chatId, { from: 'them', text: greet, ts: Date.now() });
+  }
+
+  // 聊天页面
+  function enterChatPage(mode) {
+    const id = getCurrentChatId() || '0';
+    // 标题
+    const titleChat = document.querySelector('#chat .chat-name p');
+    if (id == '0') {
+      titleChat.textContent = '文件传输助手';
+    } else {
+      const data = JSON.parse(localStorage.getItem('user_info'));
+      const user = data.find(u => u.id == id);
+      titleChat.textContent = user.username;
+    }
+    
+    if (mode === 'chat') {
+      // 自动问候
+      makeGreeting(id);
+      // 右侧消息区
+      renderChatBox();
+      // 绑定发送
+      bindSend();
+    }
+
+    // 左侧最近聊天
+    renderRecentChat(mode);
+  }
+
+  function renderRecentChat(mode) {
+
+    const panel = document.querySelector('#chat .chat-list .chat-list-body');
+    if (!panel) return;
+
+    // 清空旧节点
+    while (panel.firstChild) {
+      panel.removeChild(panel.firstChild);
+    }
+    const history = getHistory();
+    const curId = getCurrentChatId() || '0';
+    const users = JSON.parse(localStorage.getItem('user_info') || '[]');
+    // 置顶文件传输助手
+    const fixedArr = history['0'] || [];
+    const fixedLast = getLastMsgInfo(fixedArr);
+
+    const fixedTop = document.createElement('div');
+    fixedTop.className = 'chat-part' + ((curId === '0' && mode !== 'chat-home') ? ' active' : '');
+    fixedTop.innerHTML = `
+      <div class="chat-part-avatar">
+        <img src="./image/file-transfer.png" alt="file">
+      </div>
+      <div class="chat-part-info">
+        <p class="chat-part-name">文件传输助手</p>
+        <time class="chat-access-time">${formatTime(fixedLast.ts)}</time>
+        <p class="last-message">${fixedLast.text}</p>
+      </div>
+    `;
+    fixedTop.onclick = () => { location.hash = '#chat?id=0'; };
+    panel.appendChild(fixedTop);
+    
+    // 剩余按时间排序
+    let ids = Object.keys(history).filter(k => k !== '0');
+
+    ids.sort((a, b) => {
+      const arrA = history[a] || [];
+      const arrB = history[b] || [];
+      const tsA = arrA.length ? arrA[arrA.length - 1].ts : 0;
+      const tsB = arrB.length ? arrB[arrB.length - 1].ts : 0;
+      return tsB - tsA;
+    });
+
+    // 渲染动态会话
+    ids.forEach(id => {
+      const u = users.find(x => String(x.id) === String(id));
+      if (!u) return;
+
+      const arr = history[id] || [];
+      const last = getLastMsgInfo(arr);
+
+      const uname = u.username;
+      const initial = uname[0].toUpperCase();
+      const color = getColorForUser(uname);
+
+      const li = document.createElement('div');
+      li.className = 'chat-part' + ((String(id) === String(curId) && mode !== 'chat-home') ? ' active' : '');
+      li.innerHTML = `
+        <div class="chat-part-avatar">
+          <div class="user-badge" style="background:${color}">${initial}</div>
+        </div>
+        <div class="chat-part-info">
+          <p class="chat-part-name">${uname}</p>
+          <time class="chat-access-time">${formatTime(last.ts)}</time>
+          <p class="last-message">${last.text}</p>
+        </div>
+      `;
+      li.onclick = () => { location.hash = `#chat?id=${id}`; };
+      panel.appendChild(li);
+    });
+  }
+
+  function renderChatBox() {
+    const id = getCurrentChatId() || '0';
+    const list = getHistory()[id] || [];
+    const box = document.querySelector('#chat .chat-box');
+    if (!box) return;
+
+    // 左侧头像
+    let leftAvatarHtml = '';
+    if (String(id) === '0') {
+      leftAvatarHtml = `<img class="chat-avatar" src="./image/file-transfer.png" alt="file">`;
+    } else {
+      const users = JSON.parse(localStorage.getItem('user_info') || '[]');
+      const u = users.find(x => String(x.id) === String(id));
+      const uname = u.username;
+      const initial = uname[0].toUpperCase();
+      const color = getColorForUser(uname);
+      leftAvatarHtml = `
+        <div class="chat-avatar">
+          <div class="user-badge" style="background:${color}">${initial}</div>
+        </div>
+      `;
+    }
+
+    // 计算时间：最早一条消息的时间，否则当前时间
+    const firstTime = list.length ? list[0].ts : Date.now();
+    const timeStr = new Date(firstTime).toLocaleTimeString();
+
+    // 渲染消息：对方在左（白色），我方在右（绿色）
+    box.innerHTML = `
+      <div class="chat-time"><time>${timeStr}</time></div>
+      ${list.map(m => m.from === 'me'
+        ? `
+          <div class="chat-message" style="justify-content:flex-end">
+            <div class="chat-bubble bubble-right">
+              <p>${m.text}</p>
+              <div class="triangle-right"></div>
+            </div>
+            <img class="chat-avatar" src="./image/avatar.jpg" alt="me">
+          </div>
+        `
+        : `
+          <div class="chat-message" style="justify-content:flex-start">
+            ${leftAvatarHtml}
+            <div class="chat-bubble bubble-left">
+              <p>${m.text}</p>
+              <div class="triangle-left"></div>
+            </div>
+          </div>
+        `
+      ).join('')}
+    `;
+    box.scrollTop = box.scrollHeight;
+  }
+
+  function bindSend() {
+    const input = document.querySelector('#chat .send-message textarea.send-message');
+    if (!input) return;
+    input.onkeydown = (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        const text = input.value.trim();
+        if (!text) return;
+        appendMsg(getCurrentChatId() || '0', { from:'me', text, ts: Date.now() });
+        input.value = '';
+        renderChatBox();
+        renderRecentChat(); // 更新左侧顺序
+      }
+    };
+  }
+
+  // 得到最新聊天记录对象
+  function getLastMsgInfo(arr = []) {
+    if (!arr.length) return { text: '', ts: 0 };
+    const last = arr[arr.length - 1];
+    return { text: last.text || '', ts: last.ts || 0 };
+  }
+
+  function formatTime(ts) {
+    if (!ts) return '';
+    const d = new Date(ts);
+    // 只显示 HH:MM
+    return d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  }
+
+</script>
+</html>
